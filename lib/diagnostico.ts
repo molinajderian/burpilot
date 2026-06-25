@@ -60,7 +60,7 @@ export async function submitDiagnostico(data: DiagnosticoData): Promise<void> {
 
   try {
     await fetch(
-      "https://script.google.com/macros/s/AKfycbzr-wo5u4KkoQciyYY81OYfKJpKyxlyPnz-CedOWMweRwqSs9TAyXNnj7XoQY9LWnv5/exec",
+      "https://script.google.com/macros/s/AKfycbw2fJbFDFO00d2Usqdw_2VpRxKbw7xPNwlXWppR0CkPYOYMxEwUjKYIbataBz6Gyx_t/exec",
       {
         method: "POST",
         headers: {
