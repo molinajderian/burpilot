@@ -55,25 +55,23 @@ export const HERRAMIENTAS = [
 // - Resend / SendGrid para email
 // - webhook de Make / n8n / Zapier
 // - POST a tu CRM
-
 export async function submitDiagnostico(data: DiagnosticoData): Promise<void> {
-  // Log estructurado (útil para depurar)
   console.log("[BURPILOT] Nuevo diagnóstico:", JSON.stringify(data, null, 2));
 
-  // Guardar en localStorage como respaldo temporal
-  if (typeof window !== "undefined") {
-    const leads = JSON.parse(localStorage.getItem("burpilot_leads") || "[]");
-    leads.push({ ...data, timestamp: new Date().toISOString() });
-    localStorage.setItem("burpilot_leads", JSON.stringify(leads));
+  try {
+    await fetch(
+      "https://script.google.com/macros/s/AKfycbzr-wo5u4KkoQciyYY81OYfKJpKyxlyPnz-CedOWMweRwqSs9TAyXNnj7XoQY9LWnv5/exec",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
+  } catch (error) {
+    console.error("Error enviando lead:", error);
   }
 
-  // Simula latencia de red para que el loader se vea
   await new Promise((r) => setTimeout(r, 1200));
-
-  // TODO: descomentar cuando tengas API route lista
-  // await fetch("/api/diagnostico", {
-  //   method: "POST",
-  //   headers: { "Content-Type": "application/json" },
-  //   body: JSON.stringify(data),
-  // });
 }
