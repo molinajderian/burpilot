@@ -8,16 +8,16 @@ import DiagnosticoModal from "@/components/diagnostico/DiagnosticoModal";
 
 const services = [
   {
-    title: "AI WhatsApp Agent",
-    desc: "Responde clientes, califica leads y automatiza conversaciones.",
+    title: "Agente IA en WhatsApp",
+    desc: "Atiende conversaciones, filtra oportunidades y mantiene el seguimiento activo.",
   },
   {
-    title: "CRM Automation",
-    desc: "Organiza clientes sin intervención manual.",
+    title: "CRM automatizado",
+    desc: "Centraliza prospectos, datos y estados comerciales sin captura manual.",
   },
   {
-    title: "Smart Scheduling",
-    desc: "Agenda automática sincronizada con tu disponibilidad.",
+    title: "Agenda inteligente",
+    desc: "Coordina citas y disponibilidad para convertir interés en reuniones confirmadas.",
   },
 ];
 
@@ -41,14 +41,15 @@ export default function Hero() {
             variants={fadeUp}
             className="text-6xl md:text-7xl font-semibold tracking-tight leading-none max-w-3xl"
           >
-            You Lead. We Pilot.
+            Tú lideras. Nosotros piloteamos.
           </motion.h1>
 
           <motion.p
             variants={fadeUp}
             className="text-white/70 mt-6 leading-relaxed text-lg"
           >
-            Automatización de negocios con IA desde WhatsApp hasta tu calendario.
+            Automatización empresarial con IA para conectar WhatsApp, CRM y agenda
+            en un flujo comercial preciso, medible y siempre activo.
           </motion.p>
 
           <motion.div variants={fadeUp} className="flex gap-4 mt-8">
@@ -75,7 +76,7 @@ export default function Hero() {
                 transition-all duration-200
               "
             >
-              Watch Demo
+              Ver demostración
             </button>
           </motion.div>
         </div>

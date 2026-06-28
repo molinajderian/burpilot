@@ -4,22 +4,22 @@ const steps = [
   {
     icon: MessageCircle,
     title: "WhatsApp",
-    subtitle: "Incoming Lead",
+    subtitle: "Nuevo prospecto",
   },
   {
     icon: BrainCircuit,
-    title: "AI Agent",
-    subtitle: "Qualifies Automatically",
+    title: "Agente IA",
+    subtitle: "Calificación automática",
   },
   {
     icon: Database,
     title: "CRM",
-    subtitle: "Stores Information",
+    subtitle: "Registro centralizado",
   },
   {
     icon: Calendar,
-    title: "Calendar",
-    subtitle: "Books Appointment",
+    title: "Agenda",
+    subtitle: "Cita confirmada",
   },
 ];
 
@@ -27,7 +27,7 @@ export default function AutomationCard() {
   return (
     <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl shadow-2xl">
       <p className="mb-8 text-sm uppercase tracking-[0.3em] text-blue-400">
-        Automation Flow
+        Flujo automatizado
       </p>
 
       <div className="space-y-6">
