@@ -2,10 +2,11 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar } from "lucide-react";
+import { openDiagnosticoModal } from "@/lib/diagnostico-modal";
 
 export default function FinalCTA() {
   return (
-    <section className="relative py-28 overflow-hidden">
+    <section id="contact" className="relative py-28 overflow-hidden scroll-mt-32">
       {/* Glow central */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-blue-600/10 rounded-full blur-[100px]" />
@@ -54,8 +55,9 @@ export default function FinalCTA() {
 
           {/* CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <motion.a
-              href="#contacto"
+            <motion.button
+              type="button"
+              onClick={openDiagnosticoModal}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="
@@ -71,10 +73,10 @@ export default function FinalCTA() {
               <Calendar className="w-4 h-4" />
               Solicitar diagnóstico gratuito
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-            </motion.a>
+            </motion.button>
 
             <motion.a
-              href="#pricing"
+              href="#packages"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="

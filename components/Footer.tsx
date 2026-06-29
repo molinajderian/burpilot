@@ -1,24 +1,25 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Mail, MessageCircle } from "lucide-react";
+import { ArrowUpRight, MessageCircle } from "lucide-react";
+import { openDiagnosticoModal } from "@/lib/diagnostico-modal";
 
 const LINKS = {
   producto: [
-    { label: "Cómo funciona", href: "#how-it-works" },
-    { label: "Sistemas", href: "#pricing" },
-    { label: "Precios", href: "#pricing" },
+    { label: "Servicios", href: "#services" },
+    { label: "Cómo funciona", href: "#about" },
+    { label: "Paquetes", href: "#packages" },
     { label: "FAQ", href: "#faq" },
   ],
   sectores: [
-    { label: "Salud & Clínicas", href: "#" },
-    { label: "Legal & Despachos", href: "#" },
-    { label: "Real Estate", href: "#" },
-    { label: "Automotriz", href: "#" },
-    { label: "Educación", href: "#" },
+    { label: "Salud & Clínicas", href: "#services" },
+    { label: "Legal & Despachos", href: "#services" },
+    { label: "Real Estate", href: "#services" },
+    { label: "Automotriz", href: "#services" },
+    { label: "Educación", href: "#services" },
   ],
   empresa: [
-    { label: "Diagnóstico gratuito", href: "#contacto" },
+    { label: "Contacto", href: "#contact" },
     { label: "GitHub", href: "https://github.com/molinajderian", external: true },
   ],
 };
@@ -28,14 +29,11 @@ export default function Footer() {
 
   return (
     <footer className="relative border-t border-white/[0.06] bg-[#050A14]">
-      {/* Glow sutil */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
 
       <div className="max-w-6xl mx-auto px-6 pt-16 pb-10">
-        {/* Top row */}
         <div className="grid grid-cols-1 md:grid-cols-5 gap-12 mb-14">
 
-          {/* Brand col */}
           <div className="md:col-span-2">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-7 h-7 rounded-lg bg-blue-500/20 border border-blue-500/30 flex items-center justify-center">
@@ -47,28 +45,17 @@ export default function Footer() {
               Sistemas de automatización diseñados a la medida de tu negocio.
               Tú lideras. Nosotros piloteamos.
             </p>
-            {/* Contacto directo */}
-            <div className="flex flex-col gap-2">
-              <a
-                href="mailto:hola@burpilot.com"
-                className="flex items-center gap-2 text-white/40 hover:text-white/80 transition-colors text-sm group"
-              >
-                <Mail className="w-3.5 h-3.5 text-blue-400/50 group-hover:text-blue-400 transition-colors" />
-                molinajderian@gmail.com
-              </a>
-              <a
-                href="https://wa.me/3319793949"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-white/40 hover:text-white/80 transition-colors text-sm group"
-              >
-                <MessageCircle className="w-3.5 h-3.5 text-blue-400/50 group-hover:text-blue-400 transition-colors" />
-                WhatsApp directo
-              </a>
-            </div>
+            <a
+              href="https://wa.me/3319793949"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-white/40 hover:text-white/80 transition-colors text-sm group"
+            >
+              <MessageCircle className="w-3.5 h-3.5 text-blue-400/50 group-hover:text-blue-400 transition-colors" />
+              Escríbenos por WhatsApp
+            </a>
           </div>
 
-          {/* Links */}
           <div>
             <p className="text-[10px] font-mono tracking-[0.2em] uppercase text-white/25 mb-4">Producto</p>
             <ul className="space-y-2.5">
@@ -115,9 +102,9 @@ export default function Footer() {
               ))}
             </ul>
 
-            {/* CTA mini */}
-            <motion.a
-              href="#contacto"
+            <motion.button
+              type="button"
+              onClick={openDiagnosticoModal}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="
@@ -130,11 +117,10 @@ export default function Footer() {
             >
               Diagnóstico gratuito
               <ArrowUpRight className="w-3 h-3" />
-            </motion.a>
+            </motion.button>
           </div>
         </div>
 
-        {/* Bottom row */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-white/[0.05]">
           <p className="text-white/20 text-xs font-mono">
             © {year} BURPILOT. Todos los derechos reservados.
@@ -142,7 +128,7 @@ export default function Footer() {
           <div className="flex items-center gap-1">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
             <span className="text-white/20 text-xs font-mono">Sistemas operando</span>
-          </div>a
+          </div>
         </div>
       </div>
     </footer>

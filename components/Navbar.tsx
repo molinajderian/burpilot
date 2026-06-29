@@ -1,3 +1,7 @@
+"use client";
+
+import { openDiagnosticoModal } from "@/lib/diagnostico-modal";
+
 export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
@@ -10,20 +14,24 @@ export default function Navbar() {
           <div>
             <p className="font-semibold tracking-wide">BURPILOT</p>
             <p className="text-xs text-slate-400">
-              You Lead. We Pilot.
+              Tú lideras. Nosotros piloteamos.
             </p>
           </div>
         </div>
 
         <nav className="hidden gap-8 text-sm md:flex">
-          <a href="#services" className="hover:text-blue-400">Services</a>
-          <a href="#packages" className="hover:text-blue-400">Packages</a>
-          <a href="#about" className="hover:text-blue-400">About</a>
-          <a href="#contact" className="hover:text-blue-400">Contact</a>
+          <a href="#services" className="hover:text-blue-400">Servicios</a>
+          <a href="#packages" className="hover:text-blue-400">Paquetes</a>
+          <a href="#about" className="hover:text-blue-400">Proceso</a>
+          <a href="#contact" className="hover:text-blue-400">Contacto</a>
         </nav>
 
-        <button className="rounded-full bg-blue-600 px-5 py-2 font-medium transition hover:bg-blue-500">
-          Book Call
+        <button
+          type="button"
+          onClick={openDiagnosticoModal}
+          className="rounded-full bg-blue-600 px-5 py-2 font-medium transition hover:bg-blue-500"
+        >
+          Diagnóstico gratuito
         </button>
       </div>
     </header>

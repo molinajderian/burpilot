@@ -19,7 +19,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section className="max-w-6xl mx-auto px-6 py-32">
+    <section id="about" className="max-w-6xl mx-auto px-6 py-32 scroll-mt-32">
       <h2 className="text-4xl font-semibold text-center mb-16">
         Cómo opera BURPILOT
       </h2>

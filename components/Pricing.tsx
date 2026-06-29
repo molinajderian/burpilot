@@ -2,6 +2,7 @@
 
 import { motion, Variants, Easing } from "framer-motion";
 import { Check, ArrowRight, Zap, TrendingUp, Building2, Bot } from "lucide-react";
+import { openDiagnosticoModal } from "@/lib/diagnostico-modal";
 
 const PLANS = [
   {
@@ -95,7 +96,7 @@ const fadeUp: Variants = {
 
 export default function Pricing() {
   return (
-    <section className="relative py-28 overflow-hidden" id="pricing">
+    <section className="relative py-28 overflow-hidden scroll-mt-32" id="packages">
       {/* Glow de fondo */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-blue-600/5 rounded-full blur-[120px]" />
@@ -202,6 +203,8 @@ export default function Pricing() {
 
                 {/* CTA */}
                 <button
+                  type="button"
+                  onClick={openDiagnosticoModal}
                   className={`
                     group w-full flex items-center justify-center gap-2
                     text-xs font-medium py-2.5 px-4 rounded-lg

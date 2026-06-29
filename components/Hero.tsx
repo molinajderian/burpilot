@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { fadeUp, staggerContainer } from "@/lib/motion";
+import { OPEN_DIAGNOSTICO_EVENT } from "@/lib/diagnostico-modal";
 import AutomationCard from "@/components/AutomationCard";
 import DiagnosticoModal from "@/components/diagnostico/DiagnosticoModal";
 
@@ -23,6 +24,16 @@ const services = [
 
 export default function Hero() {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const openDiagnostico = () => setIsOpen(true);
+
+    window.addEventListener(OPEN_DIAGNOSTICO_EVENT, openDiagnostico);
+
+    return () => {
+      window.removeEventListener(OPEN_DIAGNOSTICO_EVENT, openDiagnostico);
+    };
+  }, []);
 
   return (
     <>
@@ -68,7 +79,8 @@ export default function Hero() {
               Solicitar diagnóstico gratuito
             </button>
 
-            <button
+            <a
+              href="#about"
               className="
                 px-6 py-3 rounded-xl
                 border border-white/20
@@ -77,7 +89,7 @@ export default function Hero() {
               "
             >
               Ver demostración
-            </button>
+            </a>
           </motion.div>
         </div>
 
@@ -86,7 +98,7 @@ export default function Hero() {
         </div>
       </motion.section>
 
-      <section className="mt-32 max-w-6xl mx-auto px-6">
+      <section id="services" className="mt-32 max-w-6xl mx-auto px-6 scroll-mt-32">
         <div className="grid md:grid-cols-3 gap-6">
           {services.map((s, i) => (
             <div
